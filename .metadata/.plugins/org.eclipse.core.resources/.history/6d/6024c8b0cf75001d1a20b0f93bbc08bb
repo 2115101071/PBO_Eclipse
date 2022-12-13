@@ -1,0 +1,13 @@
+package id.ac.undiksha.siak;
+
+import id.ac.undiksha.siak.entities.Mahasiswa;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		printAllInfo();
+
+	}
+
+}

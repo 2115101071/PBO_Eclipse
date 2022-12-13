@@ -1,0 +1,13 @@
+package id.ac.undiksha.siak.entities;
+
+public class Mahasiswa {
+	
+	private String 	nama;
+	private String 	alamat;
+	private String 	nim;
+	private boolean jenisKelamin; //0 Perempuan, 1 Laki Laki
+	private String 	prodi;
+	private String 	jurusan;
+	private String 	fakultas;
+	
+}

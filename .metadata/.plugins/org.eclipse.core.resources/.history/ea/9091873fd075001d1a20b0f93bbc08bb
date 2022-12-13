@@ -1,0 +1,18 @@
+package id.ac.undiksha.siak;
+
+import id.ac.undiksha.siak.entities.Mahasiswa;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Mahasiswa mhs1 = new Mahasiswa();
+		
+		mhs1.setNama("Yuda Mahendra");
+		mhs1.setAlamat("Singaraja");
+		
+		mhs1.printAllInfo();
+
+	}
+
+}
