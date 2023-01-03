@@ -1,67 +1,39 @@
 package id.ac.undiksha.siak.entities;
 
-public class Dosen {
-	
-	private String 	nama;
-	private String 	alamat;
-	private String 	nip;
-	private boolean jenisKelamin; //0 (Perempuan), 1 (Laki-Laki)
-	private String 	prodi;
-	private String 	jurusan;
-	private String 	fakultas;
-	private String 	jabatan;
-	
+import id.ac.undiksha.organisasi.Prodi;
 
-	public Dosen(String nama, String alamat, String nip, boolean jenisKelamin, String prodi, String jurusan,
-			String fakultas, String jabatan) {
-	super();
-	this.nama = nama;
-	this.alamat = alamat;
-	this.nip = nip;
-	this.jenisKelamin = jenisKelamin;
-	this.prodi = prodi;
-	this.jurusan = jurusan;
-	this.fakultas = fakultas;
-	this.jabatan = jabatan;
+public class Dosen extends Manusia {
+	private String nip;
+	private Prodi prodi;
+	private String jabatan;
+	
+	public Dosen() {
+		super();
+		prodi = new Prodi();
+		this.setNip("(NIP belum diisi)");
+		this.setJabatan("(Jabatan belum diisi)");
 	}
 	
-/*	public Dosen() {
-		this.setNama("<Nama belum diisi");
-		this.setNip("Nip nya isi dlu ya :)");
-		this.setAlamat("<Alamat Tidak Terdekteksi");
-		this.setProdi("<Prodi tidak terisi");
-		this.setFakultas("<Fakultas tidak terisi");
-		this.setJurusan("Jurusan tidak terdekteksi");
-		this.setJabatan("Jabatan tidak terdekteksi");
+	public Dosen(String nama, String alamat, boolean jenisKelamin, String nip, String kodeProdi, String namaProdi, String jabatan, String kodeJurusan, String namaJurusan, String namaFakultas) {
+		super(nama, alamat, jenisKelamin);
+		this.nip = nip;
+		prodi = new Prodi(kodeProdi, namaProdi, kodeJurusan, namaJurusan, namaFakultas);
+		this.jabatan = jabatan;
 	}
-*/	
+
 	public void printAllInfo() {
-		System.out.println("Nama: " + this.getNama());
-		System.out.println("Alamat: " + this.getAlamat());
-		System.out.println("NIM: " + this.getNip());
-		System.out.println("Prodi: " + this.getProdi());
-		System.out.println("Jurusan: " + this.getJurusan());
-		System.out.println("Fakultas: " + this.getFakultas());
-		System.out.println("Jabatan: " + this.getJabatan());
-		
-		System.out.println("Jenis Kelamin: "+
-		(jenisKelamin ? "Laki-Laki" : "Perempuan"));
-	}
-
-	public String getNama() {
-		return nama;
-	}
-
-	public void setNama(String nama) {
-		this.nama = nama;
-	}
-
-	public String getAlamat() {
-		return alamat;
-	}
-
-	public void setAlamat(String alamat) {
-		this.alamat = alamat;
+		System.out.println("IDENTITAS DOSEN");
+		System.out.println("Nama\t\t: " 		+ this.getNama());
+		System.out.println("Alamat\t\t: " 		+ this.getAlamat());
+		System.out.println("Jenis Kelamin\t: "	+ (this.getJenisKelamin() ? "Laki-laki" : "Perempuan"));
+		System.out.println("NIP\t\t: " 			+ this.getNip());
+		System.out.println("Kode Prodi\t: " 	+ this.getProdi().getKodeProdi());
+		System.out.println("Nama Prodi\t: " 	+ this.getProdi().getNamaProdi());
+		System.out.println("Kode Jurusan\t: " 	+ this.getProdi().getKodeJurusan());
+		System.out.println("Nama Jurusan\t: " 	+ this.getProdi().getNamaJurusan());
+		System.out.println("Nama Fakultas\t: " 	+ this.getProdi().getNamaFakultas());
+		System.out.println("Jabatan\t\t: " 		+ this.getJabatan());
+		System.out.println("\n");
 	}
 
 	public String getNip() {
@@ -71,37 +43,13 @@ public class Dosen {
 	public void setNip(String nip) {
 		this.nip = nip;
 	}
-
-	public boolean isJenisKelamin() {
-		return jenisKelamin;
-	}
-
-	public void setJenisKelamin(boolean jenisKelamin) {
-		this.jenisKelamin = jenisKelamin;
-	}
-
-	public String getProdi() {
+	
+	public Prodi getProdi() {
 		return prodi;
 	}
 
-	public void setProdi(String prodi) {
+	public void setProdi(Prodi prodi) {
 		this.prodi = prodi;
-	}
-
-	public String getJurusan() {
-		return jurusan;
-	}
-
-	public void setJurusan(String jurusan) {
-		this.jurusan = jurusan;
-	}
-
-	public String getFakultas() {
-		return fakultas;
-	}
-
-	public void setFakultas(String fakultas) {
-		this.fakultas = fakultas;
 	}
 
 	public String getJabatan() {
@@ -111,6 +59,4 @@ public class Dosen {
 	public void setJabatan(String jabatan) {
 		this.jabatan = jabatan;
 	}
-	
-	
 }

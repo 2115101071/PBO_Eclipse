@@ -1,5 +1,4 @@
 package id.ac.undiksha.siak;
-
 import id.ac.undiksha.siak.entities.Dosen;
 import id.ac.undiksha.siak.entities.Mahasiswa;
 import id.ac.undiksha.siak.entities.Pegawai;
@@ -7,53 +6,40 @@ import id.ac.undiksha.siak.entities.Pegawai;
 public class Main {
 
 	public static void main(String[] args) {
-
-		/*Mahasiswa mhs1 = new Mahasiswa();
-		
-		mhs1.setNama("Yuda Mahendra");
-		mhs1.setAlamat("Singaraja");
-		
-		mhs1.printAllInfo();
-		*/
+		Mahasiswa mhs2 = new Mahasiswa(
+				"I Gede Gelgel Abdiutama",
+				"Sukasada",
+				true,
+				"2115101014",
+				"ILKOM",
+				"Ilmu Komputer",
+				"TI",
+				"Teknik Informatika",
+				"FTK"
+				);
+		mhs2.printAllInfo();
 		
 		Dosen dosen1 = new Dosen(
 				"A.A. Gede Yudhi Paramartha, S.Kom., M.Kom.",
-				"Klungkung",
-				"21141413",
+				"Singaraja",
 				true,
+				"198806222015041003",
+				"ILKOM",
 				"Ilmu Komputer",
+				"Koorprodi",
+				"TI",
 				"Teknik Informatika",
-				"Teknik dan Kejuruan", 
-				"Dosen"
-		);
-		
+				"FTK"
+				);
 		dosen1.printAllInfo();
 		
 		Pegawai pegawai1 = new Pegawai(
-				"Karim Benjamin",
-				"Bangli",
-				"354687",
-				true,
-				"01",
-				"Pegawai UPT TIK"
-		);
-		
+				"Pegawai",
+				"Buleleng",
+				false,
+				"127891192017040221",
+				"Laboratorium FTK"
+				);
 		pegawai1.printAllInfo();
-				
-		
-		Mahasiswa mhs2 = new Mahasiswa(
-			"Udin",
-			"Badung",
-			"2135423",
-			true,
-			"Ilmu Komputer",
-			"Teknik Informatika",
-			"Teknik dan Kejuruan"
-		);
-		
-		mhs2.printAllInfo();
-
-
 	}
-
 }
